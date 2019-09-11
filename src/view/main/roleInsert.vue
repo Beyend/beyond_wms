@@ -24,8 +24,8 @@
                         <el-row>
                             <el-form-item label=" ">
                                 <div class="margin20">
-                                    <el-button type="primary" @click="toRoleAdd">确认添加</el-button>
-                                    <el-button type="primary" @click="$back()">关闭</el-button>
+                                    <el-button type="info" plain @click="toRoleAdd">确认添加</el-button>
+                                    <el-button type="info" plain @click="$back()">关闭</el-button>
                                 </div>
                             </el-form-item>
                         </el-row>

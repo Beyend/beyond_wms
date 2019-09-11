@@ -19,19 +19,19 @@
                                     </el-option>
                                 </el-select>
                             </el-form-item>
-                            <el-form-item label=" ">
-                                <el-button type="primary" @click="getTableData">
+                            <el-form-item label=" " style="margin-left:-100px;">
+                                <el-button  @click="getTableData" type="info" plain>
                                     <i class="el-icon-search"></i>
                                     <span>查询</span>
                                 </el-button>
                             </el-form-item>
-                            <el-form-item label=" " style="margin-left:-80px;">
-                                <el-button type="primary" @click="toAddUser">
+                            <el-form-item label=" " style="margin-left:-100px;">
+                                <el-button  @click="toAddUser" type="info" plain>
                                     <i class="el-icon-circle-plus-outline"></i>
                                     <span>添加</span>
                                 </el-button>
                             </el-form-item>
-                            <el-upload style="display: inline-block;margin-left:10px;"
+                            <el-upload style="display: inline-block;"
                                     class="upload-demo"
                                     action="http://localhost:8080/beyond/sysUser/import"
                                     multiple
@@ -41,11 +41,12 @@
                                     :on-exceed="handleExceed"
                                     :before-upload="beforeAvatarUpload"
                                     >
-                                    <el-button type="primary" ><i class="el-icon-upload2"></i>导入数据</el-button>
+                                <el-button type="info" plain ><i class="el-icon-upload2"></i>
+                                        <span>导入数据</span>
+                                </el-button>
                             </el-upload>
-                            <el-button type="primary" @click="getExport" size="small">
-                                    <i class="el-icon-download"></i>
-                                    <span>导出列表</span>
+                            <el-button type="info" plain @click="getExport" style="margin-left:10px;"><i class="el-icon-download"></i>
+                                        <span>导出列表</span>
                             </el-button>
                         </el-col>
                     </el-row>
@@ -64,8 +65,8 @@
                         </el-table-column>
                         <el-table-column label="操作" align="center">
                             <template slot-scope="scope">
-                                <el-button type="text" size="small" @click="modifyAccount(scope.row)" >编辑</el-button>
-                                <el-button type="text" size="small" @click="changeStatus(scope.row)" v-text="scope.row.state == 'NORMAL' ? '禁用' : '恢复'"></el-button>
+                                <el-button type="info" plain @click="modifyAccount(scope.row)" >编辑</el-button>
+                                <el-button type="info" plain @click="changeStatus(scope.row)" v-text="scope.row.state == 'NORMAL' ? '禁用' : '恢复'"></el-button>
                             </template>
                         </el-table-column>
                     </el-table>
@@ -117,7 +118,6 @@ export default {
             const isXLS = file.type === 'application/vnd.ms-excel';
             const isXLSX = file.type === 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
             if (!isXLS && !isXLSX) {
-                console.log("条件满足")
                 this.$message({
                     message : '上传文件只能是xls或xlsx格式!',
                     type : 'warning',
@@ -125,7 +125,6 @@ export default {
                 })
                 return isXLS && isXLSX;
             }
-            
         },
         //导出excel
         getExport(){
@@ -139,7 +138,7 @@ export default {
         onSuccess(response) {
             if(500 == response.meta.code){
                 this.$message({
-                message: response.meta.msg,
+                message: "导入数据失败,请检查是否有重复数据!",
                 type: 'warning',
                 center: true
                 });

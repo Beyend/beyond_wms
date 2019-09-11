@@ -17,7 +17,7 @@ export default {};
 @import "./../style/variables.less";
 header {
     height: 60px;
-    background: linear-gradient(left,#1583c3, #bfc4ff); 
+    background: linear-gradient(left,#909399, #bfc4ff); 
     display: flex;
     justify-content: space-between;
     padding: 0 20px;

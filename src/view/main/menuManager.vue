@@ -5,7 +5,7 @@
                 <el-form :inline="true" class="demo-form-inline">
                     <el-row >
                             <el-form-item label=" ">
-                                <el-button type="primary" @click="toAddMenu">
+                                <el-button type="info" plain @click="toAddMenu">
                                     <i class="el-icon-circle-plus-outline"></i>
                                     <span>添加权限</span>
                                 </el-button>
@@ -19,7 +19,7 @@
                     <el-table-column prop="name" label="权限名称" align="center"></el-table-column>
                     <el-table-column label="操作"  fixed="right" align="center">
                         <template slot-scope="scope">
-                          <el-button  @click="toEdit(scope.row)" type="text" size="small">编辑</el-button>
+                          <el-button  @click="toEdit(scope.row)" type="info" plain>编辑</el-button>
                         </template>
                     </el-table-column>
                 </el-table>

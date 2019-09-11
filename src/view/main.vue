@@ -5,7 +5,7 @@
                 <div slot="right" class="teaHeaderRight">
                     <el-dropdown @command="handleCommand">
                         <span class="el-dropdown-link">
-                            <span class="teaHeaderRightText">Hello,{{userName}}</span>
+                            <span class="teaHeaderRightText">海阔凭鱼跃 天高任鸟飞，{{userName}}</span>
                             <img class="loginOutIcon" src="../assets/img/loginout.png" alt="">
                         </span>
                         <el-dropdown-menu slot="dropdown">

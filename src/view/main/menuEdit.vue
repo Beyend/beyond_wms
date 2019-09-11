@@ -15,8 +15,8 @@
                         <el-row>
                             <el-form-item label=" ">
                                 <div class="margin20">
-                                    <el-button type="primary" @click="toMenuEdit">确认修改</el-button>
-                                    <el-button type="primary" @click="$back()">关闭</el-button>
+                                    <el-button type="info" plain @click="toMenuEdit">确认修改</el-button>
+                                    <el-button type="info" plain @click="$back()">关闭</el-button>
                                 </div>
                             </el-form-item>
                         </el-row>
